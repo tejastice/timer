@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>タイマー</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="theme-color" content="#0f1220" />
+  <link rel="icon" href="images/timer.jpg" />
+  <meta name="description" content="ストップウォッチ＆カウントダウンのシンプルなタイマー" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="logo-wrap"><img src="images/timer.jpg" alt="タイマーアイコン" class="logo" /></div>
+      <div class="tabs">
+        <button class="tab" data-tab="sw">ストップウォッチ</button>
+        <button class="tab active" data-tab="cd">カウントダウン</button>
+      </div>
+
+      <!-- Stopwatch -->
+      <section id="panel-sw" class="hidden">
+        <div class="display">
+          <div class="time" id="sw-time">00:00.00</div>
+          <div class="sub">経過時間</div>
+        </div>
+        <div class="controls">
+          <button class="btn primary" id="sw-start">スタート</button>
+          <button class="btn" id="sw-pause" disabled>一時停止</button>
+          <button class="btn success" id="sw-lap" disabled>ラップ</button>
+          <button class="btn danger" id="sw-reset" disabled>リセット</button>
+        </div>
+        <div class="laptimes" id="sw-laps"></div>
+      </section>
+
+      <!-- Countdown -->
+      <section id="panel-cd">
+        <div class="display">
+          <div class="time" id="cd-time">00:00.0</div>
+          <div class="sub">残り時間</div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label class="muted">分</label>
+            <input id="cd-min" type="number" min="0" max="999" value="0" />
+          </div>
+          <div class="field">
+            <label class="muted">秒</label>
+            <input id="cd-sec" type="number" min="0" max="59" value="30" />
+          </div>
+          <button class="btn" id="cd-preset-5" title="5分に設定">5分</button>
+        </div>
+        <div class="controls">
+          <button class="btn primary" id="cd-start">スタート</button>
+          <button class="btn" id="cd-pause" disabled>一時停止</button>
+          <button class="btn danger" id="cd-reset" disabled>リセット</button>
+        </div>
+      </section>
+
+      <footer>スペースキー: スタート/一時停止、R: リセット、L: ラップ</footer>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  
+</body>
+</html>
